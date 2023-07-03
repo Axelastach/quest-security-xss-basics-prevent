@@ -33,14 +33,12 @@
 
             <input class="text-center" placeholder="Answer here." id="token-question" style="margin-bottom: 1%;">
 
-            <p><strong>You:</strong> Well, about my ticket... I <span id="token-answer"
-                    style="color: #f0c419"></span>...</p>
-
+            <!-- Exploiting the XSS vulnerability -->
+            <img src="" onerror=`alert(&#39;XSS exploit&eacute;&#39;)` style="display: none;">
         </div>
     </div>
 
     <script>
-
         const input = document.getElementById("token-question");
         const log = document.getElementById("token-answer");
 
@@ -49,7 +47,6 @@
         function updateValue(e) {
             log.innerHTML = e.target.value;
         }
-
     </script>
 
 </body>
